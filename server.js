@@ -29,6 +29,9 @@ dbConnection();
 app.use('/', userRoutes);
 app.use('/', authRoutes);
 app.use('/', glucoseRoutes);
+app.get('/ping', (req, res) => {
+  res.status(200).send('Server is active');
+});
 
 // configuración del puerto
 app.listen(process.env.PORT, () => {
